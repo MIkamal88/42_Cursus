@@ -11,19 +11,27 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
+	int	i;
+
+	i = strlen(s);
 	while (*s)
 	{
-		
+		if (*s == c)
+			return ((char *)s);
+		i--;
 	}
+	return (NULL);
 }
 
 int	main(void)
 {
 	char tweet[] = "This @is @my @mention";
-	char *mention = strrchr(tweet, '@');
+	char *mention = ft_strrchr(tweet, '@');
 
-	printf("%s", mention);
+	printf("%s\n", mention);
+	printf("%s\n", strlen(tweet));
 }
