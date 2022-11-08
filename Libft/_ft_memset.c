@@ -14,5 +14,5 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	
+	//sets a whole block of memory to value 'c'
 }
