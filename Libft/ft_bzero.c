@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 11:11:18 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/07 11:17:14 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/07 20:51:20 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/07 20:51:21 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-char	*ft_strrchr(const char *s, int c)
+void ft_bzero(void *s, size_t n)
 {
-	int	i;
+	//same as memset except \0 instead of inserted integer
+	char	*char_s;
+	size_t i;
 
-	i = strlen(s);
-	while (*s)
+	char_s = (char *)s;
+	i = 0;
+	while (i < n)
 	{
-		if (*s == c)
-			return ((char *)s);
-		i--;
+		char_s[i] = '\0';
+		i++;
 	}
-	return (NULL);
 }
+// int	main(void)
+// {
+// 	char s[] = "This is my test phrase";
+// 	ft_bzero(s, 10) ;
 
-int	main(void)
-{
-	char tweet[] = "This @is @my @mention";
-	char *mention = ft_strrchr(tweet, '@');
-
-	printf("%s\n", mention);
-	printf("%s\n", strlen(tweet));
-}
+// 	printf(("%s"), s);
+// }
