@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   _ft_strlcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:30:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:04:10 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 09:02:54 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 14:45:43 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	char	*char_s;
 	size_t	i;
 
-	char_s = (char *)s;
 	i = 0;
-	while (i < n)
+	if (dstsize == 0)
 	{
-		char_s[i] = c;
+		while (src[i])
+			i++;
+		return (i);
+	}
+	while (i < dstsize && src[i])
+	{
+		dst[i] = src[i];
 		i++;
 	}
-	return (char_s);
+	dst[i] = '\0';
+	return (i);
 }
 
 // int	main(void)
 // {
-// 	char s[] = "This is my test phrase";
-// 	char c = 'p';
-// 	char *test = ft_memset(s, c, 23) ;
+// 	char	dst[100];
+// 	char	src[] = "This is my test phrase";
 
-// 	printf(("%s\n"), test);
+// 	printf("%lu\n", ft_strlcpy(dst, src, 25));
+// 	printf("%s\n", dst);
 // }

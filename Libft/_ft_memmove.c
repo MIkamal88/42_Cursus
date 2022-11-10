@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   _ft_memmove.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/10 09:02:16 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 09:02:34 by mshehata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	//Copies 'n' bytes from memory area 'src' to memory area 'dest'.
-	//Memory areas may overlap as copying takes place in a temp array first then to dest.
 	char	*char_dest;
 	char	*char_src;
 	char	*swap;
@@ -12,5 +22,4 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	char_dest = (char *) dest;
 	char_src = (char *) src;
 	i = 0;
-	
 }

@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   42_ft_memchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:30:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:04:10 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 08:58:08 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 08:58:09 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*char_s;
-	size_t	i;
+	size_t			i;
+	unsigned char	*char_s;
 
-	char_s = (char *)s;
+	char_s = (unsigned char *) s;
 	i = 0;
 	while (i < n)
 	{
-		char_s[i] = c;
+		if (c == char_s[i])
+			return (char_s + i);
 		i++;
 	}
-	return (char_s);
+	return (NULL);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	char s[] = "This is my test phrase";
-// 	char c = 'p';
-// 	char *test = ft_memset(s, c, 23) ;
-
-// 	printf(("%s\n"), test);
+// 	char data[] = {'q', 'w', 'a', 's', 'r', 'p', 'z', 'x'};
+// 	char *pos = ft_memchr(data, 'k', 8);
+// 	printf("pos[0] = %c\n", pos[1]);
 // }
+// Error returned when 2nd argument isn't in the array.

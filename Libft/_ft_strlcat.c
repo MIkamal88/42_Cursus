@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   _ft_strlcat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:30:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:04:10 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 09:02:57 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 14:45:16 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	char	*char_s;
 	size_t	i;
 
-	char_s = (char *)s;
 	i = 0;
-	while (i < n)
+	if (dstsize == 0)
 	{
-		char_s[i] = c;
-		i++;
+		while (src[i])
+			i++;
+		return (i);
 	}
-	return (char_s);
+	
 }
 
-// int	main(void)
-// {
-// 	char s[] = "This is my test phrase";
-// 	char c = 'p';
-// 	char *test = ft_memset(s, c, 23) ;
-
-// 	printf(("%s\n"), test);
-// }
+int	main(void)
+{
+	//returns array size of dst + src
+	//adds src TO dst and adds a null terminator after.
+	char	dst[30] = "my test phrase";
+	char	src[] = "This is";
+	printf("%lu\n", strlcat(dst, src, 0));
+	printf("%s\n", dst);
+}

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   42_ft_strdup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:30:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:04:10 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 08:58:50 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 08:58:51 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	char	*char_s;
-	size_t	i;
+	char	*dest;
+	int		i;
 
-	char_s = (char *)s;
 	i = 0;
-	while (i < n)
+	dest = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (dest == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		char_s[i] = c;
+		dest[i] = s[i];
 		i++;
 	}
-	return (char_s);
+	dest[i] = '\0';
+	return (dest);
 }
-
-// int	main(void)
-// {
-// 	char s[] = "This is my test phrase";
-// 	char c = 'p';
-// 	char *test = ft_memset(s, c, 23) ;
-
-// 	printf(("%s\n"), test);
-// }

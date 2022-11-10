@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   42_ft_strncmp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:30:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:04:10 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 08:58:53 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 08:58:57 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*char_s;
 	size_t	i;
 
-	char_s = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		char_s[i] = c;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		else if (s1[i] == '\0' && s2[i] == '\0')
+			return (0);
 		i++;
 	}
-	return (char_s);
+	return (0);
 }
-
-// int	main(void)
-// {
-// 	char s[] = "This is my test phrase";
-// 	char c = 'p';
-// 	char *test = ft_memset(s, c, 23) ;
-
-// 	printf(("%s\n"), test);
-// }

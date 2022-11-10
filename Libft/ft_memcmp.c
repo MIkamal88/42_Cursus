@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   42_ft_memcmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:30:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:04:10 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 08:58:27 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 08:58:30 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*char_s;
-	size_t	i;
+	size_t			i;
+	unsigned char	*char_s1;
+	unsigned char	*char_s2;
 
-	char_s = (char *)s;
 	i = 0;
+	char_s1 = (unsigned char *) s1;
+	char_s2 = (unsigned char *) s2;
 	while (i < n)
 	{
-		char_s[i] = c;
+		if (char_s1[i] != char_s2[i])
+			return (char_s1[i] - char_s2[i]);
 		i++;
 	}
-	return (char_s);
+	return (0);
 }
-
-// int	main(void)
-// {
-// 	char s[] = "This is my test phrase";
-// 	char c = 'p';
-// 	char *test = ft_memset(s, c, 23) ;
-
-// 	printf(("%s\n"), test);
-// }
