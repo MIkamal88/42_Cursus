@@ -31,7 +31,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // int main(void)
 // {
 // 	char data[] = {'q', 'w', 'a', 's', 'r', 'p', 'z', 'x'};
-// 	char *pos = ft_memchr(data, 'k', 8);
-// 	printf("pos[0] = %c\n", pos[1]);
+// 	char *pos = ft_memchr(data, 'p', 8);
+// 	if (pos == NULL)
+// 		printf("NULL\n");
+// 	else
+// 		printf("pos[0] = %c\n", pos[1]);
 // }
-// Error returned when 2nd argument isn't in the array.

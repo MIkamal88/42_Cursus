@@ -11,28 +11,36 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = ft_strlen(dst);
 	if (dstsize == 0)
 	{
 		while (src[i])
 			i++;
 		return (i);
 	}
-	
+	while (i < dstsize && src[i])
+	{
+		dst[j] = src[i];
+		i++;
+		j++;
+	}
+	dst[j] = '\0';
+	return (i);
 }
 
-int	main(void)
-{
-	//returns array size of dst + src
-	//adds src TO dst and adds a null terminator after.
-	char	dst[30] = "my test phrase";
-	char	src[] = "This is";
-	printf("%lu\n", strlcat(dst, src, 0));
-	printf("%s\n", dst);
-}
+// int	main(void)
+// {
+// 	//returns array size of dst + src
+// 	//adds src TO dst and adds a null terminator after.
+// 	char	dst[30] = "This is ";
+// 	char	src[] = "my test phrase.";
+// 	printf("%lu\n", ft_strlcat(dst, src, 15));
+// 	printf("%s\n", dst);
+// }

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -22,14 +21,15 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		char_s[i] = '\0';
+		char_s[i] = '0';
 		i++;
 	}
 }
+
 // int	main(void)
 // {
 // 	char s[] = "This is my test phrase";
 // 	ft_bzero(s, 10) ;
 
-// 	printf(("%s"), s);
+// 	printf(("%s\n"), s);
 // }
