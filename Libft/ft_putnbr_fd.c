@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _ft_calloc.c                                       :+:      :+:    :+:   */
+/*   _ft_putnbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 20:37:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/11 20:37:28 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/13 15:17:14 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/13 15:17:14 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	b;
-	void	*p;
-
-	if (nmemb == 0 || size == 0)
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		nmemb = 1;
-		size = 1;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	b = nmemb * size;
-	p = malloc(b);
-	if (p == NULL)
-		return (NULL);
+	else if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
 	else
-		ft_bzero(p, b);
-	return (p);
-}
-
-int	main(void)
-{
-	int	*array;
-	array = ft_calloc(1000, sizeof(int));
-	for (int i = 0; i < 1000; i++)
-		printf("%d\n", array[i]);
+		ft_putchar_fd(n + '0', fd);
 }

@@ -12,14 +12,38 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*char_dest;
+	char	*char_dst;
 	char	*char_src;
 	char	*swap;
 	size_t	i;
 
-	char_dest = (char *) dest;
+	char_dst = (char *) dst;
 	char_src = (char *) src;
 	i = 0;
+	if (dst == NULL)
+		return (NULL);
+	while (i < n)
+	{
+		swap[i] = char_src[i];
+		char_dst[i] = swap[i];
+		i++;
+	}
+	return (dst);
+}
+
+int	main(void)
+{
+	char	src[] = "test phrase 123";
+	char	dest[] = "Destination test phrase 321";
+	char	*dest_ptr = ft_memmove(dest, src, 16);
+
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+	if (dest_ptr == NULL)
+		printf("NULL");
+	else
+		printf("dest_ptr: %p\n", dest_ptr);
+	printf("dest: %p\n", dest);
 }
