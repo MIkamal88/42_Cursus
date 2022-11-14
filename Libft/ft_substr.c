@@ -14,16 +14,44 @@
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
+	size_t	k;
+	size_t	i;
 	char	*str;
 
+	k = 0;
 	i = 0;
-	str = malloc(sizeof(char) * len);
-	if (str == 0)
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
 		return (NULL);
-	
+	while (i < len)
+	{
+		if (s[k] == start)
+		{
+			while(i < len)
+			{
+				str[i] = s[k];
+				i++;
+				k++;
+			}
+		}
+		k++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
+// int	main(void)
+// {
+// 	char	s[] = "This is a test phrase";
+// 	char	start = 'T';
+
+// 	char	*res = ft_substr(s, start, 4);
+
+// 	if (res == NULL)
+// 		printf("NULL");
+// 	else
+// 		printf("%s\n", res);
+// }
 // Parameters
 // #1. The string from which to create the substring.
 // #2. The start index of the substring in the string ’s’.

@@ -25,5 +25,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	k = 0;
 	if (str == NULL)
 		return (NULL);
-	
+	while (*s1)
+	{
+		if (*s1 == *set)
+		{
+			s1++;
+			set++;
+		}
+		str[i] = *s1;
+		i++;
+	}
+	return (str);
+}
+
+int main(void)
+{
+	printf("%s", ft_strtrim("This is my test phrase", "my test phrase"));
 }
