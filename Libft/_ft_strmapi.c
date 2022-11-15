@@ -6,7 +6,7 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:24:59 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/13 15:24:59 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:05:54 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	//??
+	
 }

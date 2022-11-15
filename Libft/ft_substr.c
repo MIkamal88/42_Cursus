@@ -6,13 +6,13 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:33:03 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/12 21:33:03 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/15 09:24:52 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	k;
 	size_t	i;
@@ -27,7 +27,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		if (s[k] == start)
 		{
-			while(i < len)
+			while (i < len)
 			{
 				str[i] = s[k];
 				i++;

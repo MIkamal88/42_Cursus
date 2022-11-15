@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _ft_strjoin.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:05:31 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/13 14:05:31 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:59:16 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-int	main(void)
-{
-	char	*s1 = "This is a ";
-	char	*s2 = "test phrase";
-	printf("%s\n", ft_strjoin(s1, s2));
-}
+// int	main(void)
+// {
+// 	char	*s1 = "This is a ";
+// 	char	*s2 = "test phrase";
+// 	printf("%s\n", ft_strjoin(s1, s2));
+// }

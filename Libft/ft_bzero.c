@@ -6,7 +6,7 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:03:23 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 09:03:41 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:16:12 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		char_s[i] = '0';
+		char_s[i] = 0;
 		i++;
 	}
 }
