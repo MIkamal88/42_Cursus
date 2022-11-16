@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int	k;
 	int	i;
-	int		tmp;
+	int	tmp;
 
 	k = 0;
 	if (*needle == '\0')
@@ -45,8 +45,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // int	main(void)
 // {
 // 	char *haystack = "This is my test phrase";
-// 	char needle[] = "p";
-// 	char *res = ft_strnstr(haystack, needle, 22);
+// 	char needle[] = "is m";
+// 	char *res = ft_strnstr(haystack, needle, 3);
 // 	if (res == NULL)
 // 		printf("NULL\n");
 // 	else

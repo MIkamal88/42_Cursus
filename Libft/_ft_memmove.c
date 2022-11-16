@@ -33,17 +33,17 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-int	main(void)
-{
-	char	src[] = "test phrase 123";
-	char	dest[] = "Destination test phrase 321";
-	char	*dest_ptr = ft_memmove(dest, src, 16);
+// int	main(void)
+// {
+// 	char	src[] = "test phrase 123";
+// 	char	dest[] = "Destination test phrase 321";
+// 	char	*dest_ptr = ft_memmove(dest, src, 16);
 
-	printf("src: %s\n", src);
-	printf("dest: %s\n", dest);
-	if (dest_ptr == NULL)
-		printf("NULL");
-	else
-		printf("dest_ptr: %p\n", dest_ptr);
-	printf("dest: %p\n", dest);
-}
+// 	printf("src: %s\n", src);
+// 	printf("dest: %s\n", dest);
+// 	if (dest_ptr == NULL)
+// 		printf("NULL");
+// 	else
+// 		printf("dest_ptr: %p\n", dest_ptr);
+// 	printf("dest: %p\n", dest);
+// }

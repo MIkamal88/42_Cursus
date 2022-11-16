@@ -23,10 +23,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (arr);
 }
 
-int	main(void)
-{
-	int	*array;
-	array = ft_calloc(1000, sizeof(int));
-	for (int i = 0; i < 1000; i++)
-		printf("%d\n", array[i]);
-}
+// int	main(void)
+// {
+// 	int	*array;
+// 	array = ft_calloc(1000, sizeof(int));
+// 	for (int i = 0; i < 1000; i++)
+// 		printf("%d\n", array[i]);
+// }
