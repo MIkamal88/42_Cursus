@@ -1,7 +1,6 @@
-Library = libft
 CC = gcc
 CFLAGS =	-Wall -Wextra -Werror
-CFILES =	ft_atoi.c\
+SRCS =		ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
 			ft_isalnum.c\
@@ -29,6 +28,24 @@ CFILES =	ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
+BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+					ft_lstmap.c ft_lstnew.c ft_lstsize.c
+BONUS_OBJS		= $(BONUS:.c=.o)
 
-all: $(CC) $(CFLAGS) -c $(CFILES)
+NAME			= libft.a
 
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
+
+clean:
+				$(RM) $(OBJS) $(BONUS_OBJS)
+
+fclean:			clean
+				$(RM) $(NAME)
+
+re:				fclean $(NAME)
+
+.PHONY:			all clean fclean re bonus
