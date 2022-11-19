@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _ft_strmapi.c                                      :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 15:24:59 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/15 13:05:54 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/18 11:24:08 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/18 11:24:08 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*get_next_line(int fd)
 {
-	
+
 }
