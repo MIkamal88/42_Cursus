@@ -6,7 +6,7 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:05:31 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/15 12:59:16 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:12:59 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
-	int		k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 	char	*str;
 
 	i = 0;

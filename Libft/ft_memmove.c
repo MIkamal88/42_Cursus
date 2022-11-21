@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 16:56:34 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/19 16:56:34 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 09:02:16 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/21 14:35:45 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	t_list	*list;
+	size_t	len;
 
-	list = malloc(sizeof(*list));
-	if (!(list = malloc(sizeof(t_list))))
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	len = 0;
+	if (src < dst)
+	{
+		len = n;
+		while (len > 0)
+		{
+			len--;
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
+	}
+	else
+	{
+		len = 0;
+		while (len < n)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+			len++;
+		}
+	}
+	return (dst);
 }
