@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _ft_strlcpy.c                                      :+:      :+:    :+:   */
+/*   _ft_strlcat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 09:02:54 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 14:45:43 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 09:02:57 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 14:45:16 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (size == 0)
-	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < size && src[i])
-	{
-		dst[i] = src[i];
+	j = 0;
+	while (dst[i] && i < size)
 		i++;
+	while (src[j] && (i + j + 1) < size)
+	{
+		dst[i + j] = src[j];
+		j++;
 	}
-	dst[i] = '\0';
-	return (i);
+	if (i < size)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
 
 // int	main(void)
 // {
-// 	char	dst[100];
-// 	char	src[] = "This is my test phrase";
-
-// 	printf("%lu\n", ft_strlcpy(dst, src, 25));
+// 	//returns array size of dst + src
+// 	//adds src TO dst and adds a null terminator after.
+// 	char	dst[30] = "This is ";
+// 	char	src[] = "my test phrase.";
+// 	printf("%lu\n", ft_strlcat(dst, src, 15));
 // 	printf("%s\n", dst);
 // }

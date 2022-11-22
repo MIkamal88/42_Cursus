@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   42_ft_strncmp.c                                    :+:      :+:    :+:   */
+/*   42_ft_memchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 08:58:53 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/10 08:58:57 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 08:58:08 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 08:58:09 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
+	char	*char_s;
 
+	char_s = (char *) s;
 	i = 0;
 	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		else if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
+		if ((unsigned char)c == (unsigned char)char_s[i])
+			return ((char *)s + i);
 		i++;
 	}
 	return (0);
 }
+
+// int main(void)
+// {
+// 	char data[] = {'q', 'w', 'a', 's', 'r', 'p', 'z', 'x'};
+// 	char *pos = ft_memchr(data, 'p', 8);
+// 	if (pos == NULL)
+// 		printf("NULL\n");
+// 	else
+// 		printf("pos[0] = %c\n", pos[1]);
+// }

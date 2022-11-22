@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   _ft_strlcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:10:58 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/07 15:25:20 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/10 09:02:54 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/10 14:45:43 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	*char_dst;
-	char	*char_src;
 	size_t	i;
 
-	char_dst = (char *) dst;
-	char_src = (char *) src;
 	i = 0;
-	if (dst == NULL)
-		return (NULL);
-	while (i < n)
+	if (size == 0)
 	{
-		char_dst[i] = char_src[i];
+		while (src[i])
+			i++;
+		return (i);
+	}
+	while (i < size - 1 && src[i])
+	{
+		dst[i] = src[i];
 		i++;
 	}
-	return (dst);
+	dst[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
 }
 
 // int	main(void)
 // {
-// 	char	src[] = "test phrase123";
-// 	char	dest[100];
-// 	char	*dest_ptr = ft_memcpy(dest, src, 16);
+// 	char	*dst;
 
-// 	printf("src: %s\n", src);
-// 	printf("dest: %s\n", dest);
-// 	printf("dest_ptr: %p\n", dest_ptr);
-// 	printf("dest: %p\n", dest);
+// 	if (!(dst = (char *)malloc(sizeof(*dst) * 15)))
+// 		return (0);
+// 	memset(dst, 0, 15);
+// 	memset(dst, 'r', 6);
+// 	printf("%lu\n", ft_strlcpy(dst, "lorem ipsum", 3));
+// 	printf("%s\n", dst);
 // }

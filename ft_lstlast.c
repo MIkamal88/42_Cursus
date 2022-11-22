@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 11:24:08 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/18 11:24:08 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/19 18:37:08 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/19 18:37:08 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-char	*get_next_line(int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

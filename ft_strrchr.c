@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 18:37:08 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/19 18:37:08 by mshehata         ###   ########.fr       */
+/*   Created: 2022/11/07 11:11:18 by mshehata          #+#    #+#             */
+/*   Updated: 2022/11/07 11:17:14 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (lst)
+	i = ft_strlen(s);
+	if (c == 0)
+		return ((char *)s + i);
+	while (i >= 0)
 	{
-		if (!lst->next)
-			return (lst);
-		lst = lst->next;
+		if (s[i] == c)
+			return ((char *)s + i);
+		i--;
 	}
-	return (lst);
+	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char	*str;
+// 	char	str2[] = "bonjour";
+
+// 	if (!(str = ft_strrchr(str2, '\0')))
+// 		printf("NULL");
+// 	else
+// 	{
+// 		printf("%s", str);
+// 		if (str != str2 + 7)
+// 			printf("\nReturn value is false");
+// 	}
+// }
