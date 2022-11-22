@@ -21,14 +21,14 @@ PART1 = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 PART2 = ft_striteri.c ft_strmapi.c ft_putchar_fd.c ft_putendl_fd.c\
 		ft_putstr_fd.c ft_strjoin.c ft_strtrim.c ft_substr.c ft_putnbr_fd.c\
 
-BONUS = ft_lstnew.c ft_lstsize.c ft_lstlast.c\
-		ft_lstadd_front.c ft_lstadd_back.c\
+BONUS = ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstdelone.c\
+		ft_lstadd_front.c ft_lstadd_back.c ft_lstiter.c\
 
-ADDED =
+ADDED = ft_split.c ft_itoa.c\
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -c
 
 OUTN = $(Library).a
 
@@ -39,16 +39,16 @@ OFILES = $(SRC:.c=.o)
 NAME = $(OUTN)
 
 $(NAME):
-		$(CC) $(FLAGS) -c $(SRC) -I./
+		$(CC) $(FLAGS) $(SRC) -I./
 		ar -rc $(OUTN) $(OFILES)
 
 all: $(NAME)
 
 clean:
-	@rm -f $(OFILES)
+	rm -f $(OFILES)
 
-fclean: clean
-	@rm -f $(NAME)
+fclean:	clean
+		rm -f $(NAME)
 
 re: fclean all
 
