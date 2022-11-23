@@ -6,11 +6,12 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:33:03 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/21 14:19:16 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:06:38 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -18,8 +19,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*str;
 
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (str == 0)
+	if (!s)
+		return (NULL);
+	if ((len >= (ft_strlen(s))) && (start <= ft_strlen(s)))
+		str = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	else
+		str = malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -38,23 +44,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-// 	char	s[] = "This is a test phrase";
-// 	char	start = 'T';
+// 	char	s[] = "tripouille";
+// 	int		start = 22;
 
-// 	char	*res = ft_substr(s, start, 4);
+// 	char	*res = ft_substr(s, start, 11);
 
 // 	if (res == NULL)
 // 		printf("NULL");
 // 	else
 // 		printf("%s\n", res);
+// 	int	res2 = ft_strlen(s);
+// 	printf("%d", res2);
 // }
-// Parameters
-// #1. The string from which to create the substring.
-// #2. The start index of the substring in the string ’s’.
-// #3. The maximum length of the substring.
-// Return value The substring. NULL if the allocation fails.
-// External functs. malloc
-// Description Allocates (with malloc(3)) and returns a substring
-// from the string ’s’.
-// The substring begins at index ’start’ and is of
-// maximum size ’len’.

@@ -6,7 +6,7 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:49:49 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/07 11:10:31 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:16:43 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == ((char)c))
 			return ((char *)s);
 		s++;
 	}

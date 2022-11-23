@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   _ft_calloc.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 20:37:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/15 16:12:49 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:30:13 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*arr;
 
+	if (size && ((SIZE_MAX / size) < nmemb))
+		return (NULL);
 	arr = malloc(nmemb * size);
 	if (!arr)
 		return (NULL);
