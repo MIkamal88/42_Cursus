@@ -30,6 +30,7 @@ int		ft_isalpha(int i);
 int		ft_isascii(int i);
 int		ft_isdigit(int i);
 int		ft_isprint(int i);
+char	*ft_itoa(int n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));

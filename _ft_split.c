@@ -12,7 +12,38 @@
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static int	ft_wordcount(char *str, char c)
 {
+	int	i;
+	int	count;
 
+	i = 0;
+	count = 0;
+	if (!str || !c)
+		return (0);
+	while (str[i])
+	{
+		while (str[i] == c && str[i])
+			i++;
+		if (str[i])
+			count++;
+		while (str[i] != c && str[i])
+			i++;
+	}
+	return (count);
+}
+
+static void	ft_strcpy(char *word, char *str, char c, int j)
+{
+	int	i;
+
+	i = 0;
+	while (str[j] != '\0' && str[j] == c)
+		j++;
+	while (str[j + i] != c && str[j + i] != '\0')
+	{
+		word[i] = str[j + i];
+		i++;
+	}
+	word[i] = '\0';
 }
