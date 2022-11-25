@@ -6,7 +6,7 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:10:58 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/23 15:30:51 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/25 09:42:53 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char_dst = (char *) dst;
 	char_src = (char *) src;
 	i = 0;
-	if (dst == NULL)
+	if (!dst && !src)
 		return (NULL);
 	while (i < n)
 	{

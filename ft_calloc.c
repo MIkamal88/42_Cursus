@@ -6,7 +6,7 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 20:37:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/23 10:30:13 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/25 09:33:29 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*arr;
 
-	if (size && ((SIZE_MAX / size) < nmemb))
+	if (size && SIZE_MAX / size < nmemb)
 		return (NULL);
 	arr = malloc(nmemb * size);
 	if (!arr)
 		return (NULL);
-	ft_bzero(arr, nmemb);
+	ft_bzero(arr, (nmemb * size));
 	return (arr);
 }
 

@@ -6,12 +6,15 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:29:29 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/15 13:28:11 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/25 10:17:47 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Counting how many words
+// Counting the length of each word
+//
 static int	ft_wordcount(char *str, char c)
 {
 	int	i;
