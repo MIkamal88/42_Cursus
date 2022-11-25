@@ -6,12 +6,12 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 20:37:28 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/25 09:33:29 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/25 11:56:03 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdint.h"
+#include "stdio.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

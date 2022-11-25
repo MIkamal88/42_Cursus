@@ -6,6 +6,14 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:32:40 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/21 09:32:41 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/25 10:53:08 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	new;
+	
+}
