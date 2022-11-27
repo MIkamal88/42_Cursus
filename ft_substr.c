@@ -6,12 +6,11 @@
 /*   By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:33:03 by mshehata          #+#    #+#             */
-/*   Updated: 2022/11/25 14:13:47 by mshehata         ###   ########.fr       */
+/*   Updated: 2022/11/27 14:26:11 by mshehata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -44,10 +43,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-// 	char	s[] = "tripouille";
-// 	int		start = 22;
+// 	char	s[] = "1";
+// 	int		start = 42;
 
-// 	char	*res = ft_substr(s, start, 11);
+// 	char	*res = ft_substr(s, start, 4200000);
 
 // 	if (res == NULL)
 // 		printf("NULL");
