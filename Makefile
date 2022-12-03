@@ -6,7 +6,7 @@
 #    By: mshehata <mshehata@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 13:27:21 by mshehata          #+#    #+#              #
-#    Updated: 2022/11/27 11:45:31 by mshehata         ###   ########.fr        #
+#    Updated: 2022/12/03 14:03:04 by mshehata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,20 +31,25 @@ FLAGS = -Wall -Wextra -Werror -c
 
 OUTN = $(Library).a
 
-SRC = $(PART1) $(PART2) $(BONUS)
+SRC = $(PART1) $(PART2)
 
-OFILES = $(SRC:.c=.o)
+B_OFILES = $(BONUS:.c=.o)
+
+M_OFILES = $(SRC:.c=.o)
 
 NAME = $(OUTN)
 
 $(NAME):
 		$(CC) $(FLAGS) $(SRC) -I./
-		ar -rc $(OUTN) $(OFILES)
+		ar -rc $(OUTN) $(M_OFILES)
 
 all: $(NAME)
 
+bonus:	$(M_OFILES) $(B_OFILES)
+		ar -rc $(OUTN) $(B_OFILES)
+
 clean:
-	rm -f $(OFILES)
+	rm -f $(M_OFILES) $(B_OFILES)
 
 fclean:	clean
 		rm -f $(NAME)
